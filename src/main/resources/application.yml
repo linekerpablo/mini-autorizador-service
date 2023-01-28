@@ -1,17 +1,26 @@
 spring:
   datasource:
-    url: jdbc:h2:file:/data/carddb
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://db4free.net:3306/miniautorizador
+    username: miniautorizador
+    password: miniautorizador
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization: 'true'
     hibernate:
       ddl-auto: update
-  h2:
-    console:
-      enabled: 'true'
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+server:
+  port: ${PORT:8080}
 
 springdoc:
   swagger-ui:
