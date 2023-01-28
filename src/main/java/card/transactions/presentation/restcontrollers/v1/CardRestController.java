@@ -50,13 +50,13 @@ public class CardRestController {
 
     @Operation(summary = "Buscar saldo do cartão informado")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Cartão encontrado com sucesso",
+            @ApiResponse(responseCode = "200", description = "Cartão encontrado com sucesso",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = CardResponse.class))}),
             @ApiResponse(responseCode = "404", description = "Cartão informado não existe",
                     content = @Content)})
     @GetMapping("/{numeroCartao}")
-    public ResponseEntity<CardResponse> getCardBalanceByCardNumber(@PathVariable String cardNumber) {
+    public ResponseEntity<CardResponse> getCardBalanceByCardNumber(@PathVariable("numeroCartao") String cardNumber) {
         var cardCommand = cardFindByNumberUseCase.execute(cardNumber).orElseThrow(() -> new ErrorClientException(null, HttpStatus.NOT_FOUND, "Cartão não existe"));
 
         return ResponseEntity.status(HttpStatus.CREATED).body(CardCommandToCardResponse.translate(cardCommand));
