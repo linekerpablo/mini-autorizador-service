@@ -11,6 +11,10 @@ public class TransactionToTransactionCommand {
                         .number(transaction.getNumber())
                         .password(transaction.getPassword())
                         .value(transaction.getValue())
+                        .createdAt(transaction.getCreatedAt())
+                        .deleted(transaction.isDeleted())
+                        .deletedIn(transaction.getDeletedIn())
+                        .active(transaction.isActive())
                         .build() : null;
     }
 }

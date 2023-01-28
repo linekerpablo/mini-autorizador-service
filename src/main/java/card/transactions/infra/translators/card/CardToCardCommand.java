@@ -11,6 +11,10 @@ public class CardToCardCommand {
                         .number(card.getNumber())
                         .password(card.getPassword())
                         .balance(card.getBalance())
+                        .createdAt(card.getCreatedAt())
+                        .deleted(card.isDeleted())
+                        .deletedIn(card.getDeletedIn())
+                        .active(card.isActive())
                         .build() : null;
     }
 }

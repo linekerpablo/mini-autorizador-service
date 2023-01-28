@@ -9,6 +9,11 @@ public class CardCommandToCard {
                 Card.builder()
                         .number(command.getNumber())
                         .password(command.getPassword())
+                        .balance(command.getBalance())
+                        .createdAt(command.getCreatedAt())
+                        .deleted(command.isDeleted())
+                        .deletedIn(command.getDeletedIn())
+                        .active(command.isActive())
                         .build() : Card.builder().build();
     }
 }

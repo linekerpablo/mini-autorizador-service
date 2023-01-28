@@ -33,6 +33,6 @@ public class TransactionRestController {
 
         transactionCreateUseCase.execute(transactionCommand);
 
-        return ResponseEntity.ok("OK");
+        return ResponseEntity.ok().build();
     }
 }
