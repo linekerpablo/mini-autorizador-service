@@ -15,10 +15,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/cartoes")
@@ -47,6 +44,20 @@ public class CardRestController {
         var cardCommand = CardCreateRequestToCardCommand.translate(cardCreateRequest);
 
         cardCommand = cardCreateUseCase.execute(cardCommand);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(CardCommandToCardResponse.translate(cardCommand));
+    }
+
+    @Operation(summary = "Buscar saldo do cartão informado")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Cartão encontrado com sucesso",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CardResponse.class))}),
+            @ApiResponse(responseCode = "404", description = "Cartão informado não existe",
+                    content = @Content)})
+    @GetMapping("/{numeroCartao}")
+    public ResponseEntity<CardResponse> getCardBalanceByCardNumber(@PathVariable String cardNumber) {
+        var cardCommand = cardFindByNumberUseCase.execute(cardNumber).orElseThrow(() -> new ErrorClientException(null, HttpStatus.NOT_FOUND, "Cartão não existe"));
 
         return ResponseEntity.status(HttpStatus.CREATED).body(CardCommandToCardResponse.translate(cardCommand));
     }
