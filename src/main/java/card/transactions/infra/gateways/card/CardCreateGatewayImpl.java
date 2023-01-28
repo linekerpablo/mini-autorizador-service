@@ -14,7 +14,6 @@ public class CardCreateGatewayImpl implements CardCreateGateway {
     @Autowired
     private CardRepository cardRepository;
 
-
     @Override
     public CardCommand execute(CardCommand command) {
         return CardToCardCommand.translate(cardRepository.save(CardCommandToCard.translate(command)));

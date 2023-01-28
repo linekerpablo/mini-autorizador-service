@@ -10,6 +10,7 @@ public class CardToCardCommand {
                         .id(card.getId())
                         .number(card.getNumber())
                         .password(card.getPassword())
+                        .balance(card.getBalance())
                         .build() : null;
     }
 }
