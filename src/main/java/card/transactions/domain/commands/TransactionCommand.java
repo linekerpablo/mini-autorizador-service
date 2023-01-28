@@ -11,8 +11,8 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @SuperBuilder
-public class CardCommand extends CommandBase {
+public class TransactionCommand extends CommandBase {
     protected String number;
     protected String password;
-    protected Double balance;
+    protected Double value;
 }

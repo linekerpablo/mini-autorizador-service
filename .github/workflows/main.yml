@@ -3,7 +3,7 @@ name: CI FOR DEV
 on:
   push:
     branches:
-      - feature/CICDHerokuConfig
+      - master
 
 jobs:
   build:
