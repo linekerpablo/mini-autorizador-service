@@ -1,4 +1,4 @@
-package card.transactions.infra.translators;
+package card.transactions.infra.translators.card;
 
 import card.transactions.domain.commands.CardCommand;
 import card.transactions.infra.entities.Card;

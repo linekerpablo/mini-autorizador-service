@@ -20,9 +20,4 @@ import javax.persistence.*;
 public class Card extends EntidadeBase {
     protected String number;
     protected String password;
-
-    public Card(CardCommand command) {
-        this.number = command.getNumber();
-        this.password = command.getPassword();
-    }
 }
