@@ -1,4 +1,4 @@
-package card.transactions.domain.usecases;
+package card.transactions.domain.usecases.transaction;
 
 import card.transactions.domain.commands.TransactionCommand;
 import card.transactions.domain.gateways.transaction.interfaces.TransactionCreateGateway;

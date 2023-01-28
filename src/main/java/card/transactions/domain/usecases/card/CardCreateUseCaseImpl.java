@@ -14,6 +14,7 @@ public class CardCreateUseCaseImpl implements CardCreateUseCase {
 
     @Override
     public CardCommand execute(CardCommand command) {
+        command.setBalance(1000d);
         return cardCreateGateway.execute(command);
     }
 }
