@@ -19,6 +19,8 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+server:
+  port: ${PORT:8080}
 
 springdoc:
   swagger-ui:
