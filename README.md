@@ -17,8 +17,9 @@ O que foi utilizado para desenvolver a aplicação?
 - [Java] - 11 com Spring Boot
 - [MySQL] - Banco free da db4free
 - [Docker] - Dockerfile configurado para fazer da aplicação dockerizada
-- [Servidor] - Utilizei o gitflow com actions do github para fazer o deploy automatizado (CI/CD) na Heroku sempre que for feito um push na branch master
+- [Servidor] - Utilizado o gitflow com actions do github para fazer o deploy automatizado (CI/CD) na Heroku sempre que for feito um push na branch master
 - [Swagger] - Utilizado afim de documentar a api
+- [Lock Otimista] - Utilizado para não precisar dar um lock no banco de dados para bloquear duas transações ao mesmo tempo
 
 ## Acesso da aplicação
 
