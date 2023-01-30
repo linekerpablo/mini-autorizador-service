@@ -15,6 +15,7 @@ public class CardToCardCommand {
                         .deleted(card.isDeleted())
                         .deletedIn(card.getDeletedIn())
                         .active(card.isActive())
+                        .version(card.getVersion())
                         .build() : null;
     }
 }
