@@ -18,6 +18,7 @@ O que foi utilizado para desenvolver a aplicação?
 - [MySQL] - Banco free da db4free
 - [Docker] - Dockerfile configurado para fazer da aplicação dockerizada
 - [Servidor] - Utilizei o gitflow com actions do github para fazer o deploy automatizado (CI/CD) na Heroku sempre que for feito um push na branch master
+- [Swagger] - Utilizado afim de documentar a api
 
 ## Acesso da aplicação
 
