@@ -22,7 +22,7 @@ public class TransactionRestController {
 
     @Operation(summary = "Realizar uma Transação")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Transação realizada com sucesso",
+            @ApiResponse(responseCode = "200", description = "Transação realizada com sucesso",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = CardResponse.class))}),
             @ApiResponse(responseCode = "422", description = "Erro ao realizar transação",

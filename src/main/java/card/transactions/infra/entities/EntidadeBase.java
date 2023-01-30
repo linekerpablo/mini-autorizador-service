@@ -31,4 +31,7 @@ public class EntidadeBase {
     protected boolean active = true;
 
     protected boolean deleted = false;
+
+    @Column(columnDefinition = "integer default 1")
+    protected Integer version = 1;
 }

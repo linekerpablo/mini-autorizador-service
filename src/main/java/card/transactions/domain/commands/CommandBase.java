@@ -27,4 +27,6 @@ public class CommandBase {
     protected boolean active = true;
 
     protected boolean deleted = false;
+
+    protected Integer version;
 }

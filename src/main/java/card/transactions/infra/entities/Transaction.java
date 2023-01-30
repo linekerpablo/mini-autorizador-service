@@ -1,6 +1,5 @@
 package card.transactions.infra.entities;
 
-import card.transactions.domain.commands.TransactionCommand;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
